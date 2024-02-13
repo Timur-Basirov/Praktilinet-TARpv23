@@ -40,4 +40,12 @@ for nimi in nimed:
 print(uued_nimed)
 
 uued_nimed=list(set(nimed))
-
+print(uued_nimed)
+ages = []
+for i in range(5):
+    age = int(input("Sisesta vanus: "))
+    ages.append(age)
+min_age = min(ages)
+max_age = max(ages)
+average_age = sum(ages) / len(ages)
+print("Noorim vanus:",min(ages),"\nKõrgeim vanus:",max(ages),"\nKeskmine vanus:",sum(ages)/len(ages))
