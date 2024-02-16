@@ -100,11 +100,103 @@
 #         rida[len(rida)-1-i]=a 
 # print(rida)
 
-arv=[]
-for i in range(5):
-    arvik=int(input("Sisetage Arv: "))
-    arv.append(arvik)
-print(arv)
-a=max(arv)
-print(f"Bolshee chislo: {a}")
-b=a/len(arv)
+# arv=[]
+# for i in range(5):
+#     arvik=int(input("Sisetage Arv: "))
+#     arv.append(arvik)
+# print(arv)
+# a=max(arv)
+# print(f"Bolshee chislo: {a}")
+# b=a/len(arv)
+
+# from random import *
+# nimekirja=[]
+# n=int(input("Nimekirja suurus: "))
+# for i in range(n):
+#     arv=randint(10,100)
+#     nimekirja.append(arv)
+# print(nimekirja)
+# maksimum=max(nimekirja)
+# vajavarv=maksimum/len(nimekirja)
+# nimekirja[nimekirja.index(maksimum)]=vajavarv
+# print(nimekirja)
+
+# #1v for
+# lst = []
+# v = int(input("Kui palju numbreid te nimekirjas soovite?"))
+# for i in range(v):
+#     v = int(input("Arv: "))
+# lst.append(v)
+# suur = 0
+# for el in lst:
+#     if el > suur:
+#         suur = el
+# lst[lst.index(suur)] = suur / ( len(lst) + 1 )
+# print(f"suur {suur}, indeks on {lst.index(suur) + 1}\n{lst}")
+
+# #11
+
+# #2v sort
+# lst = []
+# v = int(input("Kui palju numbreid te nimekirjas soovite?"))
+# for i in range(v):
+#     v = int(input("Arv: "))
+# lst.append(v)
+# lst.sort()
+# suur = lst[-1]
+
+# lst[lst.index(suur)] = suur / ( len(lst) + 1 )
+# print(f"suur {suur}, indeks on {lst.index(lst[-1]) + 1}\n{lst}")
+
+
+
+# #1,#9
+glas=["e", "y", "u", "i", "o", "ü", "õ", "a", "ö", "ä"]
+soglas=[]
+nimi=input("Sisestage nimi: ")
+if nimi.isalpha():
+    print("Tere!", nimi.capitalize())
+else:
+    print("Sisestage nimi, mitte sümbolid")
+count=len(nimi)
+glas4et=0
+soglas4et=0
+print("Kolichestvo bukv v imeni:",count)
+kiri=list(nimi.lower())
+
+for kiri_element in kiri:
+    if kiri_element in glas:
+        glas4et+=1
+    else:
+        soglas.append(kiri_element)
+        soglas4et+=1
+
+print("Kolichestvo:", count,"\nKolichestvo glasnih bukv:", glas4et,"\nKolichestvo soglasnih bukv:", soglas4et)
+unique_letters=sorted(set(kiri))
+print("bukvi iz imeni v alfavitnom porjadke:", ''.join(unique_letters))
+
+#2 #12
+from random import *
+number=[]
+for i in range(10):
+    number.append(random.randint(1,100))
+mins=number.index(min(number))
+maxs=number.index(max(number))
+number[mins], number[maxs] = number[maxs], number[mins]
+print(number)
+
+#3 #15
+arvud=[1,2,3,4,5,6,7,8,9]
+eesti=["üks","kaks","kolm","neli","viis","kuus","seitse","kaheksa","üheksa"]
+inglise=["one","two","three","four","five","six","seven","eight","nine"]
+itaalia=["uno","due","tre","quattro","cinque","sei","sette","otto","nove"]
+print("Arv / Eesti / Inglise / Itaalia")
+for i in range(len(arvud)):
+    print(f"{arvud[i]} / {eesti[i]} / {inglise[i]} / {itaalia[i]}")
+    
+#4 #17
+jarjend=["lahti","rekord","mõnus","tunnel","kõrvalt","kummaline"]
+sona=input("Sisestage otsitav sõna: ")
+for i in jarjend:
+    if sona in i:
+        print("Jaa, sisaldab sõna",i)
