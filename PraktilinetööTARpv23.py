@@ -163,29 +163,27 @@ glas4et=0
 soglas4et=0
 print("Kolichestvo bukv v imeni:",count)
 kiri=list(nimi.lower())
-
-for kiri_element in kiri:
-    if kiri_element in glas:
+for kiris in kiri:
+    if kiris in glas:
         glas4et+=1
     else:
-        soglas.append(kiri_element)
+        soglas.append(kiris)
         soglas4et+=1
-
 print("Kolichestvo:", count,"\nKolichestvo glasnih bukv:", glas4et,"\nKolichestvo soglasnih bukv:", soglas4et)
-unique_letters=sorted(set(kiri))
-print("bukvi iz imeni v alfavitnom porjadke:", ''.join(unique_letters))
+unique=sorted(set(kiri))
+print("bukvi iz imeni v alfavitnom porjadke:", ''.join(unique))
 
 #2 #12
 from random import *
 number=[]
 for i in range(10):
-    number.append(random.randint(1,100))
+    number.append(randint(1,100))
 mins=number.index(min(number))
 maxs=number.index(max(number))
-number[mins], number[maxs] = number[maxs], number[mins]
+number[mins],number[maxs]=number[maxs],number[mins]
 print(number)
 
-#3 #15
+# #3 #15
 arvud=[1,2,3,4,5,6,7,8,9]
 eesti=["üks","kaks","kolm","neli","viis","kuus","seitse","kaheksa","üheksa"]
 inglise=["one","two","three","four","five","six","seven","eight","nine"]
@@ -194,9 +192,26 @@ print("Arv / Eesti / Inglise / Itaalia")
 for i in range(len(arvud)):
     print(f"{arvud[i]} / {eesti[i]} / {inglise[i]} / {itaalia[i]}")
     
-#4 #17
+# #4 #17
 jarjend=["lahti","rekord","mõnus","tunnel","kõrvalt","kummaline"]
 sona=input("Sisestage otsitav sõna: ")
-for i in jarjend:
-    if sona in i:
-        print("Jaa, sisaldab sõna",i)
+for i in range(1):
+    if sona in jarjend:
+        print("Jaa, sisaldab sõna",jarjend)
+    else:
+        print("ei, pole sisaldab sõna")
+        
+#5 #14
+linnad=["Берлин","Вена","Париж","Мадрид","Рим","Лондон","Амстердам","Осло","Лиссабон","Афины"]
+linnad.sort()
+print("Euroopa pealinnade praegune loetelu:")
+for i in linnad:
+    print(i)
+for i in range(2):
+    new_linn=input(f"Sisestage {i+1}. uue Euroopa pealinna nimi:")
+    linnad.append(new_linn)
+linnad.sort()
+print("\nEuroopa pealinnade ajakohastatud tähestikuline loetelu:")
+for i, linn in enumerate(linnad, 1):                    #при помощи индекса i и функции enumerate я делаю нумерованный список для вывода
+    print(f"{i}. {linn}")
+print(f"\nMeie järjekorras on {len(linnad)} Euroopa pealinnad.")
